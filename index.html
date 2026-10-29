@@ -70,12 +70,13 @@ section{padding:80px 0}
 .sec-head a{color:var(--plum);font-weight:600;font-size:15px}
 
 /* intentions */
-.intents{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
+.intents{display:grid;grid-template-columns:repeat(7,1fr);gap:14px}
 .intent{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px 16px;text-align:center;transition:transform .2s ease,box-shadow .2s}
 .intent:hover{transform:translateY(-3px);box-shadow:0 16px 30px -22px rgba(74,35,64,.5)}
 .intent i{display:block;width:46px;height:46px;border-radius:50%;margin:0 auto 12px;box-shadow:inset -6px -8px 14px rgba(0,0,0,.18),inset 6px 6px 10px rgba(255,255,255,.45)}
 .intent span{font-weight:600;font-size:14px}
-@media (max-width:900px){.intents{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:1000px){.intents{grid-template-columns:repeat(4,1fr)}}
+@media (max-width:600px){.intents{grid-template-columns:repeat(2,1fr)}}
 
 /* product grid */
 .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
@@ -238,7 +239,9 @@ const $ = s => document.querySelector(s);
 const fmt = n => "$" + n.toLocaleString("es-CO");
 const byId = id => PRODUCTOS.find(p => p.id === id);
 const SIGNO_ICON = {Aries:"♈",Tauro:"♉",Géminis:"♊",Cáncer:"♋",Leo:"♌",Virgo:"♍",Libra:"♎",Escorpio:"♏",Sagitario:"♐",Capricornio:"♑",Acuario:"♒",Piscis:"♓"};
-const STONE_COLOR = {"Rodonita":"#d98f9a","Cuarzo rosa":"#f1c0c6","Amatista":"#9a6fc4","Turmalina negra":"#2b2427","Ónix":"#141216","Piedra volcánica":"#3f3b3a","7 piedras de colores":"conic-gradient(#c0392b,#e67e22,#d4a017,#27ae60,#2e86c1,#1f3a93,#8e44ad,#c0392b)","Ojo turco":"#1f5fbf","Cuarzo cristal":"#e9eef0"};
+const STONE_COLOR = {"Rodonita":"#d98f9a","Cuarzo rosa":"#f1c0c6","Amatista":"#9a6fc4","Turmalina negra":"#2b2427","Ónix":"#141216","Piedra volcánica":"#3f3b3a","7 piedras de colores":"conic-gradient(#c0392b,#e67e22,#d4a017,#27ae60,#2e86c1,#1f3a93,#8e44ad,#c0392b)","Ojo turco":"#1f5fbf","Cuarzo cristal":"#e9eef0","Ojo de tigre":"#a8722a","Lapislázuli":"#22408f","Aventurina":"#4f9a6a","Cornalina":"#d4612a","Amazonita":"#6fc0b2","Piedra luna":"#dfe3ea","Howlita":"#f2f1ee"};
+// size options default to the middle choice, everything else to the first
+const defOpt = (k, v) => /^(Talla|Largo)/.test(k) ? v[Math.min(1, v.length - 1)] : v[0];
 $("#free").textContent = fmt(ENVIO_GRATIS_DESDE);
 
 // ---------- cart ----------
@@ -294,7 +297,7 @@ const card = p => `<article class="card"><div class="ph">
     <a href="#/p/${p.id}"><h3>${p.nombre}</h3></a>
     <div class="meta">${p.intenciones.map(k => INTENCIONES[k].nombre).join(" · ")}</div>
     <div class="price">${fmt(p.precio)}</div></article>`;
-function quickAdd(id) { const p = byId(id); const o = {}; for (const [k, v] of Object.entries(p.opciones)) o[k] = v[Math.min(1, v.length - 1)]; addToCart(id, 1, o); }
+function quickAdd(id) { const p = byId(id); const o = {}; for (const [k, v] of Object.entries(p.opciones)) o[k] = defOpt(k, v); addToCart(id, 1, o); }
 
 function home() {
   return `
@@ -376,7 +379,7 @@ function tienda(q) {
 let sel = {};
 function producto(id) {
   const p = byId(id); if (!p) return `<div class="wrap empty">Producto no encontrado. <a href="#/tienda">Volver a la tienda</a></div>`;
-  sel = { opts: Object.fromEntries(Object.entries(p.opciones).map(([k, v]) => [k, v[Math.min(1, v.length - 1)]])), caja: false, qty: 1 };
+  sel = { opts: Object.fromEntries(Object.entries(p.opciones).map(([k, v]) => [k, defOpt(k, v)])), caja: false, qty: 1 };
   const rel = PRODUCTOS.filter(x => x.id !== p.id && x.intenciones.some(k => p.intenciones.includes(k))).slice(0, 4);
   return `<div class="wrap">
     <p class="crumbs"><a href="#/">Inicio</a> / <a href="#/tienda">Tienda</a> / <a href="#/tienda?tipo=${p.tipo}">${TIPOS[p.tipo]}</a> / ${p.nombre}</p>
