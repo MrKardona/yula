@@ -6,20 +6,22 @@
 <!-- keep the brand colors: opt out of forced dark modes (Brave night mode, Dark Reader, Chrome auto-dark) -->
 <meta name="color-scheme" content="only light">
 <meta name="darkreader-lock">
-<meta name="theme-color" content="#4a2340">
-<title>Yulá · Curando tu alma</title>
-<meta name="description" content="Pulseras, collares y cajitas de regalo con piedras naturales, hechas a mano. Elige por intención o por tu signo.">
-<meta property="og:title" content="Yulá · Curando tu alma">
-<meta property="og:description" content="Accesorios hechos a mano con piedras naturales e intención.">
-<meta property="og:image" content="img/hero.jpg">
+<meta name="theme-color" content="#f8e3e5">
+<title>VibraLuna Accesorios · Accesorios con vibra de luna</title>
+<meta name="description" content="Pulseras, collares y cajitas de regalo hechas a mano, con piedras naturales y significado espiritual. Elige por intención, por tu signo o por la fase de la luna.">
+<meta property="og:title" content="VibraLuna Accesorios">
+<meta property="og:description" content="Accesorios hechos a mano con piedras naturales, intención y vibra de luna.">
+<meta property="og:image" content="img/vb/hero.jpg">
 <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --plum:#4a2340; --plum-2:#6b3a5e; --rose:#f1c6c9; --rose-2:#f8e1e2; --cream:#f8f1ea; --cream-2:#f1e6dc;
-  --gold:#b88d48; --sage:#a9b8a0; --ink:#2b1a26; --muted:#7a6670; --line:#e8dbd2; --card:#fffaf6; --ok:#5f7f5a;
+  /* pastel pink + gold. --plum is the deep rose used for buttons and accents */
+  --plum:#a5566b; --plum-2:#8c4558; --rose:#f6d2d7; --rose-2:#fbe7ea; --cream:#fdf5f4; --cream-2:#f9e7e8;
+  --gold:#b08a4c; --gold-2:#d9bb80; --sage:#c9a15a; --ink:#4a2f37; --muted:#8a6d74; --line:#f0dcdd; --card:#fffbfa; --ok:#5f7f5a;
+  --gold-grad:linear-gradient(135deg,#e6cc95,#b8904f 55%,#e3c78d);
   --r:18px;
   color-scheme:only light;
 }
@@ -43,10 +45,11 @@ em{font-style:italic;color:var(--plum-2)}
 .btn.block{width:100%}
 
 /* top bar + header */
-.topbar{background:var(--plum);color:#f6e7ea;font-size:13px;text-align:center;padding:8px 16px}
+.topbar{background:var(--rose);color:var(--ink);font-size:13px;text-align:center;padding:8px 16px;letter-spacing:.02em}
+.topbar::first-letter{color:var(--gold)}
 header{position:sticky;top:0;z-index:30;background:color-mix(in srgb,var(--cream) 90%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
 header .wrap{display:flex;align-items:center;gap:24px;height:72px}
-.brand img{height:44px;width:auto}
+.brand img{height:58px;width:auto}
 header nav{display:flex;gap:26px;font-size:15px;margin-left:auto}
 header nav a{color:var(--muted);transition:color .2s}
 header nav a:hover,header nav a.on{color:var(--plum)}
@@ -54,16 +57,54 @@ header nav a:hover,header nav a.on{color:var(--plum)}
 .cart-btn svg{width:20px;height:20px}
 .cart-btn b{position:absolute;top:-4px;right:-4px;min-width:20px;height:20px;border-radius:10px;background:var(--plum);color:#fff;font-size:11px;display:grid;place-items:center;padding:0 5px}
 .cart-btn b:empty{display:none}
-@media (max-width:760px){header nav{gap:16px;font-size:14px}header nav .hide-sm{display:none}.brand img{height:36px}}
+@media (max-width:760px){header nav{gap:14px;font-size:14px}header nav .hide-sm{display:none}.brand img{height:46px}}
 
 /* hero */
-.hero{position:relative;min-height:min(78vh,680px);display:flex;align-items:center;background:url(img/hero.jpg) center right/cover no-repeat}
-.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--cream) 0%,color-mix(in srgb,var(--cream) 80%,transparent) 38%,transparent 65%)}
+.hero{position:relative;min-height:min(80vh,700px);display:flex;align-items:center;background:#f7dfe0 url(img/vb/hero.jpg) center right/cover no-repeat}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(249,230,230,.92) 0%,rgba(249,230,230,.7) 38%,transparent 62%)}
 .hero .wrap{position:relative;width:100%}
-.hero .txt{max-width:520px}
+.hero .txt{max-width:540px}
 .hero p{font-size:19px;color:var(--muted);margin:20px 0 32px}
 .hero .ctas{display:flex;gap:12px;flex-wrap:wrap}
-@media (max-width:760px){.hero{min-height:auto;padding:300px 0 40px;background-position:70% top;background-size:auto 340px;background-color:var(--cream)}.hero::before{background:linear-gradient(180deg,transparent 0,transparent 220px,var(--cream) 330px)}}
+@media (max-width:760px){.hero{min-height:auto;padding:min(92vw,420px) 0 40px;background:var(--cream) url(img/vb/hero-movil.jpg) center top/100% auto no-repeat}.hero::before{background:linear-gradient(180deg,transparent 0,transparent 62vw,var(--cream) min(92vw,420px))}}
+h1 em,h2 em{background:var(--gold-grad);-webkit-background-clip:text;background-clip:text;color:transparent;padding-right:.06em}
+
+/* moon today */
+.moon{position:relative;border-radius:28px;overflow:hidden;background:#e9d3e0 url(img/vb/luna.jpg) center/cover;color:#fff;padding:56px 48px;display:grid;grid-template-columns:auto 1fr;gap:40px;align-items:center}
+.moon::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(78,46,72,.72),rgba(78,46,72,.45) 55%,rgba(78,46,72,.1))}
+.moon>*{position:relative}
+.moon svg{width:150px;height:150px;filter:drop-shadow(0 0 24px rgba(255,240,220,.7))}
+.moon h2{color:#fff}
+.moon .eyebrow{color:#f3dcae}
+.moon p{max-width:34em;margin:10px 0 22px;font-size:17px;opacity:.95}
+.moon .btn{background:#fff;color:var(--plum)}
+@media (max-width:760px){.moon{grid-template-columns:1fr;padding:32px 24px;gap:16px;text-align:center}.moon svg{margin:0 auto;width:110px;height:110px}.moon p{margin-inline:auto}}
+
+/* meanings */
+.mtabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px}
+.mgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px}
+.mcard{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px;display:flex;gap:14px;align-items:flex-start}
+.mcard i{flex:none;width:40px;height:40px;border-radius:50%;display:grid;place-items:center;font-style:normal;font-size:22px;color:var(--gold);background:var(--rose-2);box-shadow:inset -4px -6px 10px rgba(0,0,0,.08)}
+.mcard b{font-family:Fraunces,serif;font-weight:500;font-size:18px;display:block}
+.mcard p{color:var(--muted);font-size:14px;line-height:1.5;margin-top:2px}
+.banner{border-radius:28px;overflow:hidden;position:relative;min-height:300px;display:flex;align-items:center;background:var(--rose-2) center/cover}
+.banner .txt{position:relative;max-width:460px;padding:40px;margin:24px;background:color-mix(in srgb,var(--card) 88%,transparent);backdrop-filter:blur(6px);border-radius:22px}
+.banner .txt p{color:var(--muted);margin:10px 0 20px}
+@media (max-width:760px){.banner{min-height:240px;align-items:flex-end}.banner .txt{padding:24px;margin:12px}}
+
+/* journal */
+.posts{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+@media (max-width:1000px){.posts{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.posts{grid-template-columns:1fr}}
+.post img{border-radius:var(--r);aspect-ratio:4/3;object-fit:cover;transition:transform .4s ease}
+.post:hover img{transform:scale(1.03)}
+.post .ph{border-radius:var(--r);overflow:hidden}
+.post h3{font-size:21px;margin:14px 0 6px}
+.post p{color:var(--muted);font-size:14px}
+.article{max-width:760px;margin:0 auto}
+.article>img{border-radius:24px;aspect-ratio:16/9;object-fit:cover;margin:8px 0 32px}
+.article .body p{font-size:18px;line-height:1.75;margin-bottom:18px}
+.article .body p:first-child::first-letter{font-family:Fraunces,serif;font-size:3.4em;float:left;line-height:.9;padding:6px 10px 0 0;color:var(--gold)}
 
 .trust{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;padding:28px 0;border-bottom:1px solid var(--line)}
 .trust div{display:flex;gap:12px;align-items:center;font-size:14px}
@@ -159,12 +200,11 @@ details ul{padding-left:18px}
 .signos a:hover{background:var(--plum);color:#fff;border-color:var(--plum)}
 .signos a span{display:block;font-size:22px;line-height:1.2}
 @media (max-width:760px){.signos{grid-template-columns:repeat(4,1fr)}}
-.giftband{background:var(--plum);color:#f7eaee;border-radius:28px;padding:48px;display:grid;grid-template-columns:1.2fr .8fr;gap:32px;align-items:center}
-.giftband h2{color:#fff}
-.giftband p{opacity:.85;margin:12px 0 24px}
-.giftband img{border-radius:20px}
-.giftband .btn{background:var(--rose);color:var(--plum)}
-@media (max-width:760px){.giftband{grid-template-columns:1fr;padding:28px}}
+.giftband{position:relative;border-radius:28px;overflow:hidden;background:#f6ece6 url(img/vb/regalo.jpg) center right/cover;padding:64px 48px;min-height:380px;display:flex;align-items:center}
+.giftband::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(253,245,244,.92) 0%,rgba(253,245,244,.6) 45%,transparent 70%)}
+.giftband>div{position:relative;max-width:470px}
+.giftband p{color:var(--muted);margin:12px 0 24px}
+@media (max-width:760px){.giftband{padding:220px 24px 28px;background-size:auto 260px;background-position:75% top;background-repeat:no-repeat}.giftband::before{background:linear-gradient(180deg,transparent 140px,rgba(253,245,244,.96) 230px)}}
 
 /* cart drawer */
 .scrim{position:fixed;inset:0;background:rgba(43,26,38,.4);opacity:0;pointer-events:none;transition:opacity .25s;z-index:40}
@@ -203,11 +243,12 @@ footer.site small{display:block;margin-top:32px;color:var(--muted);font-size:12p
 <div class="topbar">✦ Envío gratis por compras desde <span id="free"></span> · Pago contra entrega en Colombia ✦</div>
 <header>
   <div class="wrap">
-    <a class="brand" href="#/" aria-label="Yulá, inicio"><img src="img/logo.png" alt="Yulá · Curando tu alma" width="640" height="363"></a>
+    <a class="brand" href="#/" aria-label="VibraLuna Accesorios, inicio"><img src="img/vb/logo.png" alt="VibraLuna Accesorios" width="560" height="323"></a>
     <nav>
       <a href="#/tienda" data-nav="tienda">Tienda</a>
       <a href="#/tienda?tipo=cajitas" data-nav="cajitas">Regalos</a>
-      <a class="hide-sm" href="#/" data-nav="nosotras" onclick="setTimeout(()=>document.getElementById('historia')?.scrollIntoView(),50)">Nuestra historia</a>
+      <a href="#/significados" data-nav="significados">Significados</a>
+      <a class="hide-sm" href="#/diario" data-nav="diario">Diario lunar</a>
     </nav>
     <button class="cart-btn" aria-label="Abrir carrito" onclick="openCart()">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 8h14l-1.2 11.2a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
@@ -221,11 +262,11 @@ footer.site small{display:block;margin-top:32px;color:var(--muted);font-size:12p
 <footer class="site">
   <div class="wrap">
     <div class="cols">
-      <div><img src="img/logo.png" alt="Yulá" width="640" height="363"><p class="muted" style="max-width:26em;font-size:14px">Accesorios hechos a mano con piedras naturales. Cada pieza lleva una intención y un mensaje para acompañarte.</p></div>
-      <div><h4>Tienda</h4><a href="#/tienda?linea=intencion">Línea Intención</a><a href="#/tienda?linea=esencial">Línea Esencial</a><a href="#/tienda?tipo=cajitas">Cajitas de regalo</a></div>
-      <div><h4>Ayuda</h4><a href="#" onclick="return askWA('Hola Yulá, tengo una pregunta')">Escríbenos por WhatsApp</a><a href="#/" onclick="setTimeout(()=>document.getElementById('cuidados')?.scrollIntoView(),50)">Cuidados de tus piedras</a><a href="#/" onclick="setTimeout(()=>document.getElementById('historia')?.scrollIntoView(),50)">Nuestra historia</a></div>
+      <div><img src="img/vb/logo.png" alt="VibraLuna Accesorios" width="560" height="323"><p class="muted" style="max-width:26em;font-size:14px">Accesorios hechos a mano para completar tu outfit y llevar contigo algo espiritual, energético o astrológico. Cada pieza tiene un significado.</p></div>
+      <div><h4>Tienda</h4><a href="#/tienda?linea=intencion">Línea Intención</a><a href="#/tienda?linea=esencial">Línea Esencial</a><a href="#/tienda?tipo=cajitas">Cajitas de regalo</a><a href="#/significados">Significados</a><a href="#/diario">Diario lunar</a></div>
+      <div><h4>Ayuda</h4><a href="#" onclick="return askWA('Hola VibraLuna, tengo una pregunta')">Escríbenos por WhatsApp</a><a href="#/" onclick="setTimeout(()=>document.getElementById('cuidados')?.scrollIntoView(),50)">Cuidados de tus piedras</a><a href="#/" onclick="setTimeout(()=>document.getElementById('historia')?.scrollIntoView(),50)">Nuestra historia</a></div>
     </div>
-    <small>© 2026 Yulá · Curando tu alma. Los significados de las piedras vienen de tradiciones y sistemas de creencias; los compartimos como inspiración. Algunas fotos son ilustrativas.</small>
+    <small>© 2026 VibraLuna Accesorios. Los significados de las piedras vienen de tradiciones y sistemas de creencias; los compartimos como inspiración. Algunas fotos son ilustrativas.</small>
   </div>
 </footer>
 
@@ -236,9 +277,10 @@ footer.site small{display:block;margin-top:32px;color:var(--muted);font-size:12p
   <footer id="cartfoot"></footer>
 </aside>
 <div class="toast" id="toast"></div>
-<a class="wa" href="#" onclick="return askWA('Hola Yulá, quiero información sobre sus accesorios')" aria-label="WhatsApp"><svg viewBox="0 0 32 32"><path d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3zm0 23.6a10.6 10.6 0 0 1-5.4-1.5l-.4-.2-3.9 1 1-3.8-.2-.4A10.6 10.6 0 1 1 16 26.6zm5.8-7.9c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7 0a8.7 8.7 0 0 1-4.3-3.8c-.3-.6.3-.5.9-1.7.1-.2 0-.4 0-.5l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6a1.2 1.2 0 0 0-.9.4 3.7 3.7 0 0 0-1.1 2.7 6.4 6.4 0 0 0 1.3 3.4 14.6 14.6 0 0 0 5.6 5c2.1.9 2.9 1 4 .8a3.4 3.4 0 0 0 2.2-1.6 2.8 2.8 0 0 0 .2-1.6c-.1-.1-.3-.2-.6-.4z"/></svg></a>
+<a class="wa" href="#" onclick="return askWA('Hola VibraLuna, quiero información sobre sus accesorios')" aria-label="WhatsApp"><svg viewBox="0 0 32 32"><path d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3zm0 23.6a10.6 10.6 0 0 1-5.4-1.5l-.4-.2-3.9 1 1-3.8-.2-.4A10.6 10.6 0 1 1 16 26.6zm5.8-7.9c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7 0a8.7 8.7 0 0 1-4.3-3.8c-.3-.6.3-.5.9-1.7.1-.2 0-.4 0-.5l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6a1.2 1.2 0 0 0-.9.4 3.7 3.7 0 0 0-1.1 2.7 6.4 6.4 0 0 0 1.3 3.4 14.6 14.6 0 0 0 5.6 5c2.1.9 2.9 1 4 .8a3.4 3.4 0 0 0 2.2-1.6 2.8 2.8 0 0 0 .2-1.6c-.1-.1-.3-.2-.6-.4z"/></svg></a>
 
 <script src="productos.js"></script>
+<script src="contenido.js"></script>
 <script>
 const $ = s => document.querySelector(s);
 const fmt = n => "$" + n.toLocaleString("es-CO");
@@ -251,8 +293,8 @@ $("#free").textContent = fmt(ENVIO_GRATIS_DESDE);
 
 // ---------- cart ----------
 let cart = [];
-try { cart = JSON.parse(localStorage.getItem("yula-cart")) || []; } catch {}
-const save = () => { try { localStorage.setItem("yula-cart", JSON.stringify(cart)); } catch {} renderCart(); };
+try { cart = JSON.parse(localStorage.getItem("vibraluna-cart")) || []; } catch {}
+const save = () => { try { localStorage.setItem("vibraluna-cart", JSON.stringify(cart)); } catch {} renderCart(); };
 function addToCart(id, qty = 1, opts = {}, caja = false, mensaje = "") {
   const key = id + JSON.stringify(opts) + caja + mensaje;
   const ex = cart.find(l => l.key === key);
@@ -288,7 +330,7 @@ function checkout() {
   const lines = cart.map(l => { const p = byId(l.id); const o = Object.entries(l.opts).map(([k, v]) => `${k}: ${v}`);
     if (l.caja) o.push("caja premium"); let t = `• ${l.qty} x ${p.nombre}${o.length ? " (" + o.join(", ") + ")" : ""} — ${fmt(lineTotal(l))}`;
     if (l.mensaje) t += `\n   Mensaje tarjeta: "${l.mensaje}"`; return t; });
-  wa(`Hola Yulá ✦ Quiero hacer este pedido:\n\n${lines.join("\n")}\n\nSubtotal: ${fmt(subtotal())}\n\nMi nombre:\nCiudad:`);
+  wa(`Hola VibraLuna ✦ Quiero hacer este pedido:\n\n${lines.join("\n")}\n\nSubtotal: ${fmt(subtotal())}\n\nMi nombre:\nCiudad:`);
 }
 let tt; function toast(m) { const t = $("#toast"); t.textContent = m; t.classList.add("on"); clearTimeout(tt); tt = setTimeout(() => t.classList.remove("on"), 1800); }
 const esc = s => s.replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
@@ -304,22 +346,47 @@ const card = p => `<article class="card"><div class="ph">
     <div class="price">${fmt(p.precio)}</div></article>`;
 function quickAdd(id) { const p = byId(id); const o = {}; for (const [k, v] of Object.entries(p.opciones)) o[k] = defOpt(k, v); addToCart(id, 1, o); }
 
+// ---------- moon phase (synodic month from a known new moon, 2000-01-06 18:14 UTC) ----------
+const SYNODIC = 29.530588853;
+function moonToday(d = new Date()) {
+  const age = (((d - Date.UTC(2000, 0, 6, 18, 14)) / 864e5) % SYNODIC + SYNODIC) % SYNODIC;
+  const lit = (1 - Math.cos(2 * Math.PI * age / SYNODIC)) / 2;
+  return { age, lit, fase: FASES[Math.floor((age / SYNODIC) * 8 + .5) % 8] };
+}
+// lit part drawn as a half-disc plus an elliptical terminator; waxing is lit on the right
+function moonSVG({ age, lit }) {
+  const r = 48, rx = Math.abs(1 - 2 * lit) * r, waxing = age < SYNODIC / 2, gibbous = lit > .5;
+  const s1 = waxing ? 1 : 0, s2 = waxing ? (gibbous ? 1 : 0) : (gibbous ? 0 : 1);
+  return `<svg viewBox="0 0 100 100" aria-hidden="true"><defs><radialGradient id="mg" cx=".4" cy=".35"><stop offset="0" stop-color="#fffaf2"/><stop offset="1" stop-color="#f3dccb"/></radialGradient></defs>
+    <circle cx="50" cy="50" r="${r}" fill="rgba(255,255,255,.18)" stroke="rgba(255,255,255,.5)" stroke-width=".6"/>
+    <path d="M50 2A${r} ${r} 0 0 ${s1} 50 98A${rx.toFixed(2)} ${r} 0 0 ${s2} 50 2z" fill="url(#mg)"/></svg>`;
+}
+
+const posts = list => `<div class="posts">${list.map(a => `<a class="post" href="#/diario/${a.id}"><div class="ph"><img src="${a.img}" alt="" loading="lazy" width="900" height="675"></div><h3>${a.titulo}</h3><p>${a.resumen}</p></a>`).join("")}</div>`;
+
 function home() {
+  const m = moonToday(), [fase, msg, intent] = m.fase;
   return `
   <section class="hero"><div class="wrap"><div class="txt">
-    <p class="eyebrow">Hecho a mano · Piedras naturales</p>
-    <h1>Accesorios que <em>curan</em> tu alma y completan tu outfit.</h1>
-    <p>Pulseras, collares y cajitas de regalo con piedras elegidas por su intención. Bonitos para todos los días, creas o no en su energía.</p>
+    <p class="eyebrow">Hecho a mano · Con significado</p>
+    <h1>Accesorios con <em>vibra de luna</em> para completar tu outfit.</h1>
+    <p>Pulseras, collares y cajitas de regalo con piedras naturales, flores y símbolos. Bonitos para todos los días y con un mensaje que te acompaña, creas o no en su energía.</p>
     <div class="ctas"><a class="btn" href="#/tienda">Comprar ahora</a><a class="btn light" href="#/tienda?tipo=cajitas">Ver regalos</a></div>
   </div></div></section>
   <div class="wrap trust">
-    <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 2 4 9l8 13 8-13z"/><path d="M4 9h16M12 2l-3 7 3 13 3-13z"/></svg>Piedras 100% naturales</div>
+    <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 2 4 9l8 13 8-13z"/><path d="M4 9h16M12 2l-3 7 3 13 3-13z"/></svg>Piedras naturales</div>
     <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 8h18v12H3zM12 8v12M3 8l3-4h12l3 4"/></svg>Empaque de regalo incluido</div>
     <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7z"/><circle cx="7" cy="18" r="1.6"/><circle cx="17" cy="18" r="1.6"/></svg>Envíos a toda Colombia</div>
     <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M3 10h18"/></svg>Pago contra entrega</div>
   </div>
 
   <section><div class="wrap">
+    <div class="moon">${moonSVG(m)}
+      <div><p class="eyebrow">La luna hoy · ${Math.round(m.lit * 100)}% iluminada</p><h2>${fase}</h2><p>${msg}</p>
+        <a class="btn" href="#/tienda?intencion=${intent}">Accesorios para esta luna →</a></div></div>
+  </div></section>
+
+  <section style="padding-top:0"><div class="wrap">
     <div class="sec-head"><div><p class="eyebrow">Compra por intención</p><h2>¿Qué quieres <em>sentir</em> hoy?</h2></div></div>
     <div class="intents">${Object.entries(INTENCIONES).map(([k, v]) => `<a class="intent" href="#/tienda?intencion=${k}"><i style="background:${v.color}"></i><span>${v.nombre}</span></a>`).join("")}</div>
   </div></section>
@@ -330,12 +397,16 @@ function home() {
   </div></section>
 
   <section style="padding-top:0"><div class="wrap">
-    <div class="giftband">
-      <div><p class="eyebrow" style="color:var(--rose)">Temporada de regalos</p><h2>Cajitas listas para regalar en diciembre</h2>
-        <p>Pulseras, vela artesanal y una tarjeta con el mensaje que tú escribas. Tú eliges la intención, nosotras la empacamos.</p>
-        <a class="btn" href="#/tienda?tipo=cajitas">Ver cajitas →</a></div>
-      <img src="img/p/cajita-amor.jpg" alt="Cajita de regalo con pulseras y vela" loading="lazy" width="900" height="900">
-    </div>
+    <div class="giftband"><div><p class="eyebrow">Temporada de regalos</p><h2>Cajitas con <em>velita aromática</em> listas para regalar</h2>
+      <p>Una pulsera con significado, una vela artesanal y una tarjeta con el mensaje que tú escribas. Tú eliges la intención, nosotras la empacamos con amor.</p>
+      <a class="btn" href="#/tienda?tipo=cajitas">Ver cajitas →</a></div></div>
+  </div></section>
+
+  <section style="padding-top:0"><div class="wrap">
+    <div class="banner" style="background-image:url(img/vb/significados.jpg)"><div class="txt">
+      <p class="eyebrow">Todo tiene un significado</p><h2>Colores, flores y símbolos</h2>
+      <p>No solo las piedras: el rosa, la margarita o un corazón también llevan un mensaje. Descubre qué significa lo que llevas puesto.</p>
+      <a class="btn" href="#/significados">Ver significados →</a></div></div>
   </div></section>
 
   <section style="padding-top:0"><div class="wrap">
@@ -343,11 +414,16 @@ function home() {
     <div class="signos">${SIGNOS.map(s => `<a href="#/tienda?signo=${encodeURIComponent(s)}"><span>${SIGNO_ICON[s]}</span>${s}</a>`).join("")}</div>
   </div></section>
 
+  <section style="padding-top:0"><div class="wrap">
+    <div class="sec-head"><div><p class="eyebrow">Diario lunar</p><h2>Espiritualidad, astrología y <em>amor propio</em></h2></div><a href="#/diario">Ver todo →</a></div>
+    ${posts(ARTICULOS)}
+  </div></section>
+
   <section id="historia" style="background:var(--cream-2)"><div class="wrap story">
     <img src="img/rodonita-real.jpg" alt="La rodonita de Yuliana en la palma de su mano" loading="lazy" width="1600" height="1220">
-    <div><p class="eyebrow">Nuestra historia</p><h2>Todo empezó con una <em>rodonita</em>.</h2>
-      <p>Yuliana carga siempre esta piedra. La usó para canalizar la rabia, y hoy es su recordatorio de que quiere vivir en calma. De ahí nace Yulá: accesorios hechos a mano para que cada mujer lleve consigo un recordatorio de lo que quiere sentir.</p>
-      <p>Hay una línea <b>Esencial</b>, con color y flores para todos los días, y una línea <b>Intención</b>, con piedras naturales y una tarjeta con su significado.</p></div>
+    <div><p class="eyebrow">Nuestra historia</p><h2>Una <em>rodonita</em> y la luna.</h2>
+      <p>Yuliana carga siempre una rodonita: la piedra que la ayudó a canalizar la rabia y volver a la calma. Y dice la astrología que a las mujeres nos rige la luna. De ahí nace VibraLuna: accesorios hechos a mano para que cada mujer complete su outfit y, a la vez, lleve consigo algo espiritual, energético o astrológico.</p>
+      <p>Hay una línea <b>Esencial</b>, con colores, flores y corazones para todos los días, y una línea <b>Intención</b>, con piedras naturales y una tarjeta con su significado.</p></div>
   </div></section>
 
   <section id="cuidados"><div class="wrap" style="max-width:820px">
@@ -419,15 +495,55 @@ function pick(el, k, v) { sel.opts[k] = v; el.parentNode.querySelectorAll(".chip
 function pack(el, v) { sel.caja = v; el.parentNode.querySelectorAll("button").forEach(b => b.classList.toggle("on", b === el)); }
 function q(d) { sel.qty = Math.max(1, sel.qty + d); $("#qn").textContent = sel.qty; }
 
+// every stone used in the catalog, with its meaning, for the "Piedras" tab
+const piedras = () => [...new Map(PRODUCTOS.flatMap(p => p.piedras).map(([n, m]) => [n, m])).entries()];
+const MTABS = { colores: "Colores", flores: "Flores", simbolos: "Símbolos", piedras: "Piedras" };
+function significados(q) {
+  const ver = MTABS[q.get("ver")] ? q.get("ver") : "colores";
+  const items = ver === "colores" ? SIGNIFICADOS.colores.map(([n, c, t]) => [n, `<i style="background:${c}"></i>`, t])
+    : ver === "piedras" ? piedras().map(([n, t]) => [n, `<i style="background:${STONE_COLOR[n] || "#ccc"}"></i>`, t])
+    : SIGNIFICADOS[ver].map(([n, s, t]) => [n, `<i>${s}</i>`, t]);
+  return `<div class="wrap">
+    <p class="crumbs"><a href="#/">Inicio</a> / Significados</p>
+    <div class="banner" style="background-image:url(img/vb/significados.jpg)"><div class="txt">
+      <p class="eyebrow">Todo tiene un significado</p><h1 style="font-size:clamp(32px,4vw,48px)">Lo que dice lo que <em>llevas</em></h1>
+      <p>Elige tus accesorios por el mensaje de sus colores, flores, símbolos y piedras.</p></div></div>
+    <section style="padding-top:40px">
+      <div class="mtabs">${Object.entries(MTABS).map(([k, l]) => `<a class="chip ${k === ver ? "on" : ""}" href="#/significados?ver=${k}">${l}</a>`).join("")}</div>
+      <div class="mgrid">${items.map(([n, ic, t]) => `<div class="mcard">${ic}<div><b>${n}</b><p>${t}</p></div></div>`).join("")}</div>
+      <p class="muted" style="font-size:13px;margin-top:24px">Estos significados vienen de tradiciones espirituales, astrológicas y culturales. Los compartimos como inspiración.</p>
+    </section>
+    <section style="padding-top:0"><div class="sec-head"><h2>Del diario lunar</h2><a href="#/diario">Ver todo →</a></div>${posts(ARTICULOS)}</section>
+  </div>`;
+}
+
+function diario(id) {
+  const a = ARTICULOS.find(x => x.id === id);
+  if (!a) return `<div class="wrap"><p class="crumbs"><a href="#/">Inicio</a> / Diario lunar</p>
+    <div class="moon" style="margin-bottom:48px">${moonSVG(moonToday())}<div><p class="eyebrow">Diario lunar</p><h1 style="font-size:clamp(34px,4.4vw,56px);color:#fff">Espiritualidad, astrología y amor propio</h1>
+      <p>Mensajes, rituales y significados para acompañarte en cada fase de la luna.</p></div></div>
+    ${posts(ARTICULOS)}</div>`;
+  return `<div class="wrap"><article class="article">
+    <p class="crumbs"><a href="#/">Inicio</a> / <a href="#/diario">Diario lunar</a></p>
+    <h1 style="font-size:clamp(34px,4.4vw,54px)">${a.titulo}</h1>
+    <img src="${a.img}" alt="" width="900" height="675">
+    <div class="body">${a.cuerpo.map(t => `<p>${t}</p>`).join("")}</div>
+    <p style="margin-top:32px"><a class="btn" href="${a.filtro}">Ver accesorios →</a></p>
+  </article>
+  <section><div class="sec-head"><h2>Sigue leyendo</h2></div>${posts(ARTICULOS.filter(x => x.id !== a.id).slice(0, 4))}</section></div>`;
+}
+
 // ---------- router ----------
 function route() {
   const h = location.hash.slice(1) || "/";
   const [path, qs] = h.split("?");
   const params = new URLSearchParams(qs || "");
   let html, nav = "";
-  if (path.startsWith("/p/")) { const p = byId(path.slice(3)); html = producto(path.slice(3)); document.title = (p ? p.nombre + " · " : "") + "Yulá"; }
-  else if (path === "/tienda") { html = tienda(params); nav = params.get("tipo") === "cajitas" ? "cajitas" : "tienda"; document.title = "Tienda · Yulá"; }
-  else { html = home(); document.title = "Yulá · Curando tu alma"; }
+  if (path.startsWith("/p/")) { const p = byId(path.slice(3)); html = producto(path.slice(3)); document.title = (p ? p.nombre + " · " : "") + "VibraLuna"; }
+  else if (path === "/tienda") { html = tienda(params); nav = params.get("tipo") === "cajitas" ? "cajitas" : "tienda"; document.title = "Tienda · VibraLuna"; }
+  else if (path === "/significados") { html = significados(params); nav = "significados"; document.title = "Significados · VibraLuna"; }
+  else if (path.startsWith("/diario")) { const id = path.slice(8); html = diario(id); nav = "diario"; const a = ARTICULOS.find(x => x.id === id); document.title = (a ? a.titulo : "Diario lunar") + " · VibraLuna"; }
+  else { html = home(); document.title = "VibraLuna Accesorios · Accesorios con vibra de luna"; }
   $("#app").innerHTML = html;
   document.querySelectorAll("[data-nav]").forEach(a => a.classList.toggle("on", a.dataset.nav === nav));
   window.scrollTo(0, 0); closeCart();

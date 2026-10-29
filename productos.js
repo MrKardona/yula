@@ -1,4 +1,4 @@
-// Catálogo de Yulá. Para agregar o editar productos, cambia solo este archivo.
+// Catálogo de VibraLuna. Para agregar o editar productos, cambia solo este archivo.
 // precio en pesos colombianos (COP), IVA incluido.
 
 const WHATSAPP = ""; // número con indicativo, sin + ni espacios. Ej: "573001234567"
@@ -24,7 +24,7 @@ const PRODUCTOS = [
     id: "pulsera-rodonita", nombre: "Pulsera Rodonita", precio: 24000, img: "img/p/rodonita.jpg",
     tipo: "pulseras", linea: "intencion", intenciones: ["calma","amor"], signos: ["Tauro","Libra","Escorpio"],
     piedras: [["Rodonita", "Calma y equilibrio emocional"]],
-    corto: "La piedra con la que empezó Yulá. Para soltar la rabia y volver a tu centro.",
+    corto: "La piedra con la que empezó VibraLuna. Para soltar la rabia y volver a tu centro.",
     descripcion: "Cuentas de rodonita natural de 8 mm, rosa con vetas oscuras, y un separador dorado. Es un recordatorio en tu muñeca de que la calma también se elige.",
     opciones: { Talla: ["S (15 cm)","M (17 cm)","L (19 cm)"] },
     incluye: ["Pulsera de rodonita en hilo elástico","Tarjeta con el significado de la piedra","Bolsita de organza"],
